@@ -1,0 +1,44 @@
+    1  mkdir t1
+    2  cd t1
+    3  ls
+    4  sudo apt install python3-pip
+    5  sudo pip install gdown
+    6  gdown 18oi_OAsRnl8YAOxtQ5smcJsL7IHl-2x0
+
+* Find your home directory path.
+    7  echo "The command -> echo $HOME " > t1.txt
+    8  echo "My home directory path is: " >> t1.txt
+    9  echo $HOME >> t1.txt
+   10  echo "   " >> t1.txt
+
+* Find which files under /proc/ contain memory and CPU information.
+   11  echo "The command -> ls /proc | grep mem" >> t1.txt
+   12  echo "The information about the server's memory is: " >> t1.txt
+   13  ls /proc | grep mem >> t1.txt
+   14  echo "   " >> t1.txt
+
+   16  echo "Answer to the part 2 of Q2: To use the command -> ls /proc | grep cpu" >> t1.txt
+   17  echo "The information about the CPUs on the server is: " >> t1.txt
+   18  ls /proc | grep cpu >> t1.txt
+   19  echo "   " >> t1.txt
+
+* Identify the file under /etc/ that contains the OS version.
+   20  echo "The command -> ls /etc | grep release " >> t1.txt
+   21  echo "The file under under /etc/ is: " >> t1.txt
+   22  ls /etc | grep release >> t1.txt
+   23  echo "      "  >> t1.txt
+
+* NYC Taxi Data Analysis (2019-04.csv)
+A. Most Popular Pickup Locations (2019-04-02), identify the top 3 locations.
+   25  echo "The command -> grep '^.*,"2019-04-02' 2019-04.csv | cut -d',' -f8 | sort | uniq -c | sort -nr | head -n 3" >> t1.txt
+   26  echo "Counts - Pickup location IDs: (Top 1 to Top 3) on 2019-04-02: " >> t1.txt
+   27  grep '^.*,"2019-04-02' 2019-04.csv | cut -d',' -f8 | sort | uniq -c | sort -nr | head -n 3 >> t1.txt
+   28  echo "      "  >> t1.txt
+
+B. Most Popular Pickup Locations (2019-04-10) by location IDs, identify the top 3 locations.
+   30  echo "The command -> grep '^.*,"2019-04-10' 2019-04.csv | cut -d',' -f8 | sort | uniq -c | sort -nr | head -n 3" >> t1.txt
+   31  echo "Counts - Pickup location IDs: (Top 1 to Top 3)  on 2019-04-10: " >> t1.txt
+   32  grep '^.*,"2019-04-10' 2019-04.csv | cut -d',' -f8 | sort | uniq -c | sort -nr | head -n 3 >> t1.txt
+ 
+   33  cat t1.txt
+   36  history > cmds.log
